@@ -1,18 +1,10 @@
 import cv2
 import numpy as np
-import time
 
-cv2.namedWindow('ImageCamera')
-
-widthChess = 9
-heightChess = 6
-square_size = 0.21
-pointsWorld=[]
-pointsImg = []
-imgGray =[]
 
 def getPoints(widthChess, heightChess, square_size): 
 	global pointsWorld, pointsImg, imgGray
+
 	#points in the real word
 	points3D = np.zeros((heightChess*widthChess, 3), np.float32)
 	points3D[:, :2] = np.mgrid[0:widthChess, 0:heightChess].T.reshape(-1, 2)
@@ -27,13 +19,25 @@ def getPoints(widthChess, heightChess, square_size):
 
 
 	if(ret): #if found
-		pointsWorld.append(points3D)
+
 		#add ChessboardCorners points of image file
 		corners2 = cv2.cornerSubPix(imgGray, corners, (11, 11), (-1, -1),(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001))
 		pointsImg.append(corners2)
 		img = cv2.drawChessboardCorners(img, (widthChess, heightChess), corners2, ret)
 		cv2.imshow('ImageCamera', img)
 
+		#add real world points
+		pointsWorld.append(points3D)
+
+
+widthChess = 9
+heightChess = 6
+square_size = 0.21
+pointsWorld=[]
+pointsImg = []
+imgGray =[]
+
+cv2.namedWindow('ImageCamera')
 
 #get poitns of the world and the image
 getPoints(widthChess, heightChess, square_size)
@@ -54,5 +58,8 @@ print("Vetor de translação (T): \n",T, "\n")
 print("Matriz de rotação(R):\n", R, "\n")
 print("Matriz de projeção(P):\n ", projection)
 
+while(True):
+    if cv2.waitKey(1) == 27:
+        break
 
 cv2.destroyAllWindows()

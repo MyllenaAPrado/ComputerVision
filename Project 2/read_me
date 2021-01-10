@@ -1,0 +1,15 @@
+Trabalho 2: Segmentação de imagens utilizando U-Net
+
+Autoras: Myllena de Almeida e Roberta Costa
+
+O código para o desenvolvimento deste projeto pode ser acessado no diretório compartilhado do google drive: https://drive.google.com/drive/folders/1ef0Na3Yf_BIIs8OwZl54uKikpxi3BTEL?usp=sharing
+
+O notebook de execução é o "Project2_resnet34_bs8.ipynb".
+
+O diretório contém uma pasta em que foram salvos os arquivos .pkl ("Arquivos_pkl") dos resultados apresentados.
+
+O código deve ser executado na ordem em que as células são apresentadas.
+
+Estão inclusos nos arquivos dessa pasta zipada o arquivo do notebook "project2_resnet34_bs8.ipynb" e o arquivo em python "project2_resnet34_bs8.py".
+
+

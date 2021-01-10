@@ -1,0 +1,23 @@
+Autoras: Myllena de Almeida e Roberta Costa
+
+Versão python: 3.7.6
+Versão opencv: opencv-contrib-python 3.4.11.43
+
+Bibliotecas utilizadas: cv2, numpy, time, pathlib, optparse, sys, os.pathe e matplotlib
+
+Antes de executar qualquer um dos requisitos, inserir no diretório 'trabalho1_imagens' do projeto as pastas 'Calibration1' e 'Calibration2' disponibilizadas pelo Professor no roteiro do trabalho. Não trocar os vídeos pelos disponibilizados pelo professor, pois estão cortados para o funcionamento do requisito 4.
+
+Executar no diretório raiz do projeto:
+1. Requisito 1: 'python3 StereoProject.py --r1'
+ Os resultados são guardados no diretório './resultados_r1/'
+
+2. Requisito 2: 'python3 StereoProject.py --r2'
+ Os resultados são guardados no diretório './resultados_r2/'
+ 
+3. Requisito 3: 'python3 StereoProject.py --r3'
+ Utiliza os pontos já determinados nos arquivos pointsL.npy e pointsR.npy no diretório './imagens_sinc/'. Se quiser selecionar novos pontos, é necessário descomentar o trecho indicado no código em 'if opts.r3_maps'. São necessários no mínimo 7 pontos.
+ 
+4. Requisito 4: 'python3 StereoProject.py --r4'
+ Utiliza os pontos já determinados nos arquivos trajectory1.npy e trajectory2.npy no diretório './resultados_r4/'. Se quiser executar o tracker novamente, é necessário descomentar o trecho indicado em 'if opts.r4_tracker'. Utiliza os vídeos cortados em formato .mp4 no diretório 'trabalho1_imagens'.
+
+
